@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.icon > polyline {
+  stroke: white;
+}
+.white-icon,
+.white-icon path {
+  stroke: #f9f9f9;
+  fill: #f9f9f9;
+}
+.shrinking {
+  transform-origin: center;
+  animation: shrinking 2s ease-in-out 2s alternate infinite;
+}
+.float {
+  animation: float 2s ease-in-out 2s alternate infinite;
+}
+
+@keyframes shrinking {
+  to {
+    transform: scaleX(0.7);
+  }
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-10px);
+  }
+}
+#stroked-footer {
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+*::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  position: absolute;
+  right: 0;
+  background: #dcdcdc;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 100vh;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3e31f7;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+nav a {
+  position: relative;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 0;
+  border-bottom: 3px solid #3e31f7;
+  transition: all 0.3s ease;
+}
+
+nav a:hover:not(.no-effect) {
+  color: #3e31f7;
+}
+
+nav a:hover:not(.no-effect)::before {
+  width: 100%;
+}
+
+.signed-in-btn:hover {
+  color: #3e31f7;
+}
+.cross1 {
+  transform-origin: left;
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+.cross2 {
+  transform-origin: left;
+  transform: rotate(-45deg) translate(-5px, 3px);
+}
+html {
+  scroll-behavior: smooth;
+}
+@layer base {
+  .overlapping-borders {
+    box-shadow: rgb(255, 255, 255) 12px 12px 0px 0px,
+      rgb(0, 0, 0) 12px 12px 0px 1px;
+    @apply border border-black rounded-xl p-3;
+  }
+  li {
+    @apply list-none;
+  }
+  body * {
+    @apply scroll-smooth md:p-0 font-['proxima_nova'] text-black;
+  }
+
+  body {
+    @apply bg-[#f9f9f9] min-h-screen w-full;
+  }
+
+  p {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+  h1 {
+    @apply font-bold text-4xl md:text-5xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply font-bold text-5xl;
+  }
+  a {
+    @apply text-sm md:text-base;
+  }
+  h3 {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+
+  img {
+    @apply w-full max-w-[300px] md:max-w-[500px] lg:max-w-[600px];
+  }
+
+  .form-control {
+    @apply h-fit rounded-xl shadow-lg flex justify-center flex-col p-8 md:p-12 space-y-4 lg:space-y-8;
+  }
+
+  .form-control label {
+    @apply font-semibold tracking-wider text-ellipsis overflow-hidden whitespace-nowrap;
+  }
+
+  .form-control input,
+  select {
+    @apply border h-10 p-2 md:h-14 md:p-4 rounded-lg tracking-wider text-sm lg:text-base;
+  }
+
+  .form-control textarea {
+    @apply border p-2 md:p-4 max-w-full h-fit rounded-lg;
+  }
+
+  .form-control select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("./assets/arrow-down.svg");
+    background-position: right 1rem center;
+    background-size: 0.75rem;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+  .form-control .file-input {
+    position: relative;
+    background-image: url("./assets/camera.svg");
+    background-position: 95% center;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    min-height: fit-content;
+    @apply rounded-lg min-h-fit p-2 md:p-4;
+  }
+
+  .form-control button {
+    @apply border bg-accent h-12 md:h-12 lg:h-14 rounded-lg text-white text-base md:text-xl font-bold tracking-widest flex justify-center items-center;
+  }
+
+  input[type="file"] {
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0%;
+    opacity: 0;
+  }
+
+  #file-upload-button {
+    background-color: black;
+  }
+}

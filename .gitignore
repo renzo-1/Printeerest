@@ -1,0 +1,6 @@
+backend/.env
+backend/cloudinary
+backend/configs
+
+frontend/node_modules
+backend/node_modules

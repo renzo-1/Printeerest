@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order</title>
+</head>
+<body>
+    <form action="/api/orders" method="POST" enctype="multipart/form-data">
+        <label for="category">Category</label>
+        <select name="order[category]" id="category">
+            <option value="clothing">Clothing</option>
+            <option value="reading">Reading</option>
+            <option value="graphic">Graphic</option>
+        </select>
+        <label for="type">Type</label>
+        <input type="text" name="order[type]" id="type">
+        <br>
+        <label for="color">Color</label>
+        <select name="order[color]" id="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+        </select>
+        <label for="size">Size</label>
+        <select name="order[size]" id="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <label for="qty">Quantity</label>
+        <input type="number" name="order[quantity]" id="qty">
+        <br>
+        <label for="color">Color</label>
+        <select name="order[color]" id="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+        </select>
+        <label for="size">Size</label>
+        <select name="order[size]" id="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <label for="qty">Quantity</label>
+        <input type="number" name="order[quantity]" id="qty">
+        <br>
+        <label for="price">Price</label>
+        <input type="number" name="order[totalPrice]" id="price">
+        <select name="order[paymentMethod]" id="payment">
+            <option selected disabled hidden">Choose a payment method...</option>
+            <option value="COD">Cash On Delivery</option>
+            <option value="GCash">Gcash</option>
+            <option value="Card">Debit/Credit Card</option>
+        </select>
+        <br>
+        <label for="file">Upload content</label>
+        <input type="file" name="order[file]" id="file">
+        <br>
+        <label for="note">Note</label>
+        <textarea name="order[note]" id="note" cols="20" rows="5"></textarea>
+        <br>
+        <h1>Delivery Address</h1>
+        <label for="fName">First name</label>
+        <input type="text" name="deliveryAddress[firstName]" id="fName">
+        <label for="lName">Last name</label>
+        <input type="text" name="deliveryAddress[lastName]" id="lName">
+        <label for="email">Email</label>
+        <input type="email" name="deliveryAddress[email]" id="email">
+        <label for="mobileNo">Mobile number</label>
+        <input type="number" name="deliveryAddress[mobileNo]" id="mobileNo">
+        <label for="country">Country</label>
+        <input type="text" name="deliveryAddress[country]" id="country">
+        <label for="province">Province</label>
+        <input type="text" name="deliveryAddress[province]" id="province">
+        <label for="zip">Zip code</label>
+        <input type="number" name="deliveryAddress[zip]" id="zip">
+        <label for="city">City</label>
+        <input type="text" name="deliveryAddress[city]" id="city">
+        <label for="baranggay">Baranggay</label>
+        <input type="text" name="deliveryAddress[baranggay]" id="baranggay">
+        <label for="street">Street</label>
+        <input type="text" name="deliveryAddress[street]" id="street">
+       
+        <button>Submit</button>
+    </form>
+</body>
+</html>
